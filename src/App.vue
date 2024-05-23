@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <header>
+      <img src="../src/assets/hospi.png" alt="Logo" class="logo">
+            <h1>Administración para Hospitales</h1>
+    </header>
     <nav id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
@@ -19,18 +23,51 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos que se aplicarán solo a este componente */
-#nav {
-  background-color: #333;
-  padding: 10px;
+/* Estilos del componente */
+body {
+  background-color: #e0e7ff; /* Gris azulado */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#app {
+  text-align: center;
+  padding: 20px;
+}
+
+header {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header .logo {
+  width: 100px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+header h1 {
+  margin: 20px 0;
+  color: #333;
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #nav a {
+  display: block;
+  width: 200px;
   color: white;
+  background-color: #333;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 0;
+  margin: 5px 0;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
