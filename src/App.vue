@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <img src="../src/assets/hospi.png" alt="Logo" class="logo">
-            <h1>Administración para Hospitales</h1>
+      <h1>Administración para Hospitales</h1>
     </header>
     <nav id="nav">
       <router-link to="/">Home</router-link>
@@ -40,6 +40,7 @@ header {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  position: relative;
 }
 
 header .logo {
@@ -56,18 +57,16 @@ header h1 {
 
 #nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre los elementos */
 }
 
 #nav a {
-  display: block;
-  width: 200px;
+  display: inline-block;
   color: white;
   background-color: #333;
   text-decoration: none;
-  padding: 10px 0;
-  margin: 5px 0;
+  padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
