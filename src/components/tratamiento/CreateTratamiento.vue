@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <h1>Crear Tratamiento</h1>
+      <router-link to="/tratamiento/create" class="btn btn-primary mb-3">Crear Tratamiento</router-link>
       <form @submit.prevent="guardarTratamiento">
         <div class="form-group">
           <label for="fecha_facturacion" class="form-label">Fecha de Facturación:</label>

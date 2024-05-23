@@ -32,6 +32,7 @@ const routes = [
   { path: '/tratamiento/create', name: 'CreateTratamiento', component: CreateTratamiento },
   { path: '/tratamiento/:id/edit', name: 'EditarTratamiento', component: EditarTratamiento },
   { path: '/tratamiento/eliminar', name: 'EliminarTratamiento', component: EliminarTratamiento },
+  
 ];
 
 const router = createRouter({

@@ -1,6 +1,6 @@
 <template>
-  <div class="container bg-light">
-    <h1 class="text-center mb-4">Crear Cita</h1>
+ <div class="container" style="background-color: #808080;">    
+  <h1 class="text-center mb-4">Crear Cita</h1>
     <form @submit.prevent="guardarCita">
       <div class="form-group">
         <label for="paciente_id" class="form-label">Paciente:</label>
@@ -128,7 +128,7 @@ export default {
 <style>
 .container {
   padding: 20px;
-  
+
 }
 .form-group {
   margin-bottom: 15px;
