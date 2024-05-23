@@ -23,7 +23,6 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos del componente */
 body {
   background-color: #e0e7ff; /* Gris azulado */
   margin: 0;
