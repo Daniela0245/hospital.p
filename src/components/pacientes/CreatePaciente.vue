@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     cancelar() {
-      this.$router.push({ name: 'Pacientes' });
+      this.$router.push({ name: 'Paciente' });
     },
     async guardarPaciente() {
       try {

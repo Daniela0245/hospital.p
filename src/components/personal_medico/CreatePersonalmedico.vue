@@ -1,32 +1,37 @@
 <template>
-  <div class="container" style="background-color: #808080;">
-    <h1 class="text-center mb-4">Crear Personal Médico</h1>
-    <form @submit.prevent="guardarPersonalMedico">
-      <div class="form-group">
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" v-model="personalMedico.nombre" class="form-control" id="nombre" required>
-      </div>
+  <div>
+    <div class="container-fluid bg-yellow p-2 d-flex justify-content-end">
+      <button @click="irAInicio" class="btn btn-primary">Inicio</button>
+    </div>
+    <div class="container" style="background-color: #808080;">
+      <h1 class="text-center mb-4">Crear Personal Médico</h1>
+      <form @submit.prevent="guardarPersonalMedico">
+        <div class="form-group">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" v-model="personalMedico.nombre" class="form-control" id="nombre" required>
+        </div>
 
-      <div class="form-group">
-        <label for="apellido" class="form-label">Apellido:</label>
-        <input type="text" v-model="personalMedico.apellido" class="form-control" id="apellido" required>
-      </div>
+        <div class="form-group">
+          <label for="apellido" class="form-label">Apellido:</label>
+          <input type="text" v-model="personalMedico.apellido" class="form-control" id="apellido" required>
+        </div>
 
-      <div class="form-group">
-        <label for="especialidad" class="form-label">Especialidad:</label>
-        <input type="text" v-model="personalMedico.especialidad" class="form-control" id="especialidad" required>
-      </div>
+        <div class="form-group">
+          <label for="especialidad" class="form-label">Especialidad:</label>
+          <input type="text" v-model="personalMedico.especialidad" class="form-control" id="especialidad" required>
+        </div>
 
-      <div class="form-group">
-        <label for="horario" class="form-label">Horario:</label>
-        <input type="text" v-model="personalMedico.horario" class="form-control" id="horario" required>
-      </div>
+        <div class="form-group">
+          <label for="horario" class="form-label">Horario:</label>
+          <input type="text" v-model="personalMedico.horario" class="form-control" id="horario" required>
+        </div>
 
-      <div>
-        <button class="btn btn-primary" type="submit">Guardar</button>
-        <button class="btn btn-secondary mx-2" @click.prevent="cancelar">Cancelar</button>
-      </div>
-    </form>
+        <div>
+          <button class="btn btn-primary" type="submit">Guardar</button>
+          <button class="btn btn-secondary mx-2" @click.prevent="cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -48,7 +53,7 @@ export default {
   },
   methods: {
     cancelar() {
-      this.$router.push({ name: 'PersonalMedico' });
+      this.$router.push({ name: 'Personalmedico' }); // Ajusta la capitalización aquí
     },
     async guardarPersonalMedico() {
       try {
@@ -71,6 +76,9 @@ export default {
           text: 'No se pudo guardar el personal médico. Por favor, intente de nuevo.'
         });
       }
+    },
+    irAInicio() {
+      this.$router.push({ name: 'Home' });
     }
   }
 };
@@ -82,5 +90,8 @@ export default {
 }
 .form-group {
   margin-bottom: 15px;
+}
+.bg-yellow {
+  background-color: yellow;
 }
 </style>

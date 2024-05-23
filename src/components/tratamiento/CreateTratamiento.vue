@@ -27,6 +27,7 @@
           </select>
         </div>
         <button class="btn btn-primary" type="submit">Guardar</button>
+        <button class="btn btn-secondary mx-2" @click.prevent="cancelar">Cancelar</button> <!-- Botón Cancelar -->
       </form>
     </div>
   </div>
@@ -71,6 +72,9 @@ export default {
     },
     irAInicio() {
       this.$router.push({ name: 'Home' });
+    },
+    cancelar() {
+      this.$router.push({ name: 'Tratamiento' }); // Utiliza 'Tratamiento' en lugar de 'Tratamientos'
     }
   }
 };
