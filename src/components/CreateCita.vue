@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h1>Crear Cita</h1>
+  <div class="container bg-light">
+    <h1 class="text-center mb-4">Crear Cita</h1>
     <form @submit.prevent="guardarCita">
       <div class="form-group">
         <label for="paciente_id" class="form-label">Paciente:</label>
@@ -22,20 +22,25 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="tipo" class="form-label">Tipo:</label>
-        <select class="form-select" v-model="cita.tipo" required>
-          <option disabled value="">Seleccione un tipo</option>
-          <option v-for="tipo in tipos" :key="tipo.value" :value="tipo.value">{{ tipo.label }}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="estado" class="form-label">Estado:</label>
-        <select class="form-select" v-model="cita.estado" required>
-          <option disabled value="">Seleccione un estado</option>
-          <option v-for="estado in estados" :key="estado.value" :value="estado.value">{{ estado.label }}</option>
-        </select>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="tipo" class="form-label">Tipo:</label>
+            <select class="form-select" v-model="cita.tipo" required>
+              <option disabled value="">Seleccione un tipo</option>
+              <option v-for="tipo in tipos" :key="tipo.value" :value="tipo.value">{{ tipo.label }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="estado" class="form-label">Estado:</label>
+            <select class="form-select" v-model="cita.estado" required>
+              <option disabled value="">Seleccione un estado</option>
+              <option v-for="estado in estados" :key="estado.value" :value="estado.value">{{ estado.label }}</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <div class="form-group">
@@ -43,9 +48,9 @@
         <input class="form-control" type="datetime-local" v-model="cita.fecha_hora" required>
       </div>
 
-      <div>
-        <button class="btn btn-primary" type="submit">Guardar</button>
-        <button class="btn btn-secondary mx-2" @click.prevent="cancelar">Cancelar</button>
+      <div class="d-grid">
+        <button class="btn btn-primary btn-lg" type="submit">Guardar</button>
+        <button class="btn btn-secondary btn-lg mt-3" @click.prevent="cancelar">Cancelar</button>
       </div>
     </form>
   </div>
@@ -123,8 +128,13 @@ export default {
 <style>
 .container {
   padding: 20px;
+  
 }
 .form-group {
   margin-bottom: 15px;
+}
+.large-label {
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Texto en negrita */
 }
 </style>

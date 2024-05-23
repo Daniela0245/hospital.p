@@ -41,6 +41,7 @@ export default {
 .text {
   flex: 1;
   margin-right: 20px; /* Margen a la derecha para separar del contenido de la imagen */
+  text-align: justify; /* Justifica el texto */
 }
 
 .image img {
