@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <h1>Listado de Personal Médico</h1>
-      <router-link to="/personal_medico/create" class="btn btn-primary mb-3">Crear Personal Médico</router-link>
+      <router-link to="/personalmedico/create" class="btn btn-primary mb-3">Crear Personal Médico</router-link>
   
       <table class="table">
         <thead>

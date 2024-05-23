@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <h1>Listado de Tratamientos</h1>
-      <router-link to="/tratamientos/create" class="btn btn-primary mb-3">Crear Tratamiento</router-link>
+      <router-link to="/tratamiento/create" class="btn btn-primary mb-3">Crear Tratamiento</router-link>
   
       <table class="table">
         <thead>
