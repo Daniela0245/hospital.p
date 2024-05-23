@@ -3,7 +3,7 @@
     <div class="home">
       <h2>Bienvenido a la Administración para Hospitales</h2>
       <p>Con nuestra aplicación, podrás llevar a cabo todas las operaciones necesarias para la gestión eficiente de tu centro médico. Desde la administración de pacientes hasta la coordinación del personal médico, pasando por la gestión de citas médicas, tratamientos y facturación, todo está cubierto.</p>
-      <p>Esta es la página principal de tu aplicación.</p>
+      <p>ECon un diseño intuitivo y amigable, podrás acceder y gestionar la información de pacientes, programar citas médicas de manera eficiente, asignar tratamientos específicos y llevar un seguimiento detallado de la facturación.</p>
       <p>Esta es la página principal de tu aplicación.</p>
 
       <!-- Aquí puedes agregar más contenido e información relevante -->
