@@ -10,10 +10,7 @@
           <label for="fecha_facturacion" class="form-label">Fecha de Facturación:</label>
           <input type="date" v-model="tratamiento.fecha_facturacion" class="form-control" id="fecha_facturacion" required>
         </div>
-        <div class="form-group">
-          <label for="total" class="form-label">Tipo de Tratamiento:</label>
-          <input type="number" v-model="tratamiento.total" class="form-control" id="total" required>
-        </div>
+
         <div class="form-group">
           <label for="total" class="form-label">Total:</label>
           <input type="number" v-model="tratamiento.total" class="form-control" id="total" required>
@@ -45,14 +42,16 @@ export default {
         fecha_facturacion: '',
         total: null,
         estado: ''
+        
       }
     };
   },
-  methods: {
+  methods: { 
     guardarTratamiento() {
-      axios.post('http://127.0.0.1:8000/api/tratamientos', this.tratamiento)
+      console.log(this.tratamiento.estado+' '+this.tratamiento.fecha_facturacion+' '+this.tratamiento.total);
+      axios.post('http://127.0.0.1:8000/api/tratamiento', this.tratamiento)
         .then(() => {
-          this.$router.push({ name: 'Tratamientos' });
+          this.$router.push({ name: 'Tratamiento' });
           Swal.fire({
             position: 'top-end',
             icon: 'success',

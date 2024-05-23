@@ -23,7 +23,7 @@
 
         <div class="form-group">
           <label for="horario" class="form-label">Horario:</label>
-          <input type="text" v-model="personalMedico.horario" class="form-control" id="horario" required>
+          <input type="text" v-model="personalMedico.horas_trabajo" class="form-control" id="horario" required> <!-- Asegúrate de usar 'horas_trabajo' si así es como se llama en el backend -->
         </div>
 
         <div>
@@ -47,7 +47,7 @@ export default {
         nombre: '',
         apellido: '',
         especialidad: '',
-        horario: ''
+        horas_trabajo: ''  // Usar 'horas_trabajo' si así es como se llama en el backend
       }
     };
   },
@@ -57,9 +57,11 @@ export default {
     },
     async guardarPersonalMedico() {
       try {
-        const res = await axios.post('http://127.0.0.1:8000/api/personal_medico', this.personalMedico);
+        console.log(this.personalMedico.nombre+' '+this.personalMedico.apellido+' '+this.personalMedico.especialidad+' '+this.personalMedico.horas_trabajo);
+
+        const res = await axios.post('http://127.0.0.1:8000/api/personalmedico', this.personalMedico);
         if (res.status === 201) {
-          this.$router.push({ name: 'PersonalMedico' });
+          this.$router.push({ name: 'Personalmedico' }); // Ajusta la capitalización aquí también
           Swal.fire({
             position: 'top-end',
             icon: 'success',

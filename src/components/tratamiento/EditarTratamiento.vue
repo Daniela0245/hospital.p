@@ -32,6 +32,7 @@
     data() {
       return {
         tratamiento: {
+          Id :0,
           fecha_facturacion: '',
           total: null,
           estado: ''
@@ -44,7 +45,7 @@
     methods: {
       obtenerDatosTratamiento() {
         const tratamientoId = this.$route.params.id;
-        axios.get(`http://127.0.0.1:8000/api/tratamientos/${tratamientoId}`)
+        axios.get(`http://127.0.0.1:8000/api/tratamiento/${tratamientoId}`)
           .then(response => {
             this.tratamiento = response.data.tratamiento;
           })
@@ -54,9 +55,9 @@
       },
       actualizarTratamiento() {
         const tratamientoId = this.$route.params.id;
-        axios.put(`http://127.0.0.1:8000/api/tratamientos/${tratamientoId}`, this.tratamiento)
+        axios.put(`http://127.0.0.1:8000/api/tratamiento/${tratamientoId}`, this.tratamiento)
           .then(() => {
-            this.$router.push({ name: 'Tratamientos' });
+            this.$router.push({ name: 'Tratamiento' });
             Swal.fire({
               position: 'top-end',
               icon: 'success',

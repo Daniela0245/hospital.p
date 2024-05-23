@@ -74,14 +74,11 @@ export default {
     };
   },
   methods: {
-    cancelar() {
-      this.$router.push({ name: 'Paciente' });
-    },
     async guardarPaciente() {
       try {
-        const res = await axios.post('http://127.0.0.1:8000/api/pacientes', this.paciente);
+        const res = await axios.post('http://127.0.0.1:8000/api/paciente', this.paciente);
         if (res.status === 201) {
-          this.$router.push({ name: 'Pacientes' });
+          this.$router.push({ name: 'Paciente' });
           Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -91,7 +88,7 @@ export default {
           });
         }
       } catch (error) {
-        console.error('Error creando el paciente:', error);
+        console.error('Error creando el paciente:', error.message);
         Swal.fire({
           icon: 'error',
           title: 'Error',
@@ -101,12 +98,15 @@ export default {
     },
     irAInicio() {
       this.$router.push({ name: 'Home' });
+    },
+    cancelar() {
+      this.$router.push({ name: 'Pacientes' }); // Ajusta el nombre de la ruta según tu configuración
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   padding: 20px;
 }

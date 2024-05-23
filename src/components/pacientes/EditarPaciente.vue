@@ -48,6 +48,7 @@ export default {
   data() {
     return {
       paciente: {
+        Id: 0,
         nombre: '',
         apellido: '',
         fecha_nacimiento: '',
@@ -65,7 +66,7 @@ export default {
     obtenerDatosPaciente() {
       const pacienteId = this.$route.params.id;
   axios
-    .get(`http://127.0.0.1:8000/api/pacientes/${pacienteId}`)
+    .get(`http://127.0.0.1:8000/api/paciente/${pacienteId}`)
     .then(response => {
       this.paciente = response.data.paciente;
     })

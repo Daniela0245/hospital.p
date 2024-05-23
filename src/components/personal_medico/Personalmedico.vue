@@ -46,7 +46,7 @@
     },
     methods: {
       fetchPersonalMedico() {
-        axios.get('http://127.0.0.1:8000/api/personal_medico')
+        axios.get('http://127.0.0.1:8000/api/personalmedico')
           .then(response => {
             this.personalMedico = response.data.personal_medico;
           })
@@ -58,7 +58,7 @@
         this.$router.push({ name: 'EditarPersonalMedico', params: { id: id } });
       },
       eliminarMedico(id) {
-        axios.delete(`http://127.0.0.1:8000/api/personal_medico/${id}`)
+        axios.delete(`http://127.0.0.1:8000/api/personalmedico/${id}`)
           .then(() => {
             this.fetchPersonalMedico();
           })

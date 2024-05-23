@@ -53,7 +53,7 @@ export default {
   methods: {
     fetchPacientes() {
       axios
-        .get('http://127.0.0.1:8000/api/pacientes')
+        .get('http://127.0.0.1:8000/api/paciente')
         .then(response => {
           this.pacientes = response.data.pacientes;
         })
@@ -66,7 +66,7 @@ export default {
   this.$router.push({ name: 'EditarPaciente', params: { id: id } });
 },
     eliminarPaciente(id) {
-      axios.delete(`http://127.0.0.1:8000/api/pacientes/${id}`)
+      axios.delete(`http://127.0.0.1:8000/api/paciente/${id}`)
         .then(() => {
           // Eliminación exitosa, puedes actualizar la lista de pacientes si es necesario
           this.fetchPacientes();
