@@ -7,6 +7,10 @@
       <h1>Crear Tratamiento</h1>
       <form @submit.prevent="guardarTratamiento">
         <div class="form-group">
+          <label for="id" class="form-label">id</label>
+          <input type="text" v-model="tratamiento.id" class="form-control" id="id" required>
+        </div>
+        <div class="form-group">
           <label for="fecha_facturacion" class="form-label">Fecha de Facturación:</label>
           <input type="date" v-model="tratamiento.fecha_facturacion" class="form-control" id="fecha_facturacion" required>
         </div>
@@ -41,6 +45,7 @@ export default {
   name: 'CreateTratamiento',
   data() {
     return {
+      id:0,
       tratamiento: {
         fecha_facturacion: '',
         total: null,
@@ -50,9 +55,9 @@ export default {
   },
   methods: {
     guardarTratamiento() {
-      axios.post('http://127.0.0.1:8000/api/tratamientos', this.tratamiento)
+      axios.post('http://127.0.0.1:8000/api/tratamiento', this.tratamiento)
         .then(() => {
-          this.$router.push({ name: 'Tratamientos' });
+          this.$router.push({ name: 'Tratamiento' });
           Swal.fire({
             position: 'top-end',
             icon: 'success',

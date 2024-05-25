@@ -33,7 +33,7 @@
   import axios from "axios";
   
   export default {
-    name: 'Tratamientos',
+    name: 'Tratamiento',
     data() {
       return {
         tratamientos: []
@@ -45,7 +45,7 @@
     methods: {
       fetchTratamientos() {
         axios
-          .get('http://127.0.0.1:8000/api/tratamientos')
+          .get('http://127.0.0.1:8000/api/tratamiento')
           .then(response => {
             this.tratamientos = response.data.tratamientos;
           })
@@ -57,7 +57,7 @@
         this.$router.push({ name: 'EditarTratamiento', params: { id: id } });
       },
       eliminarTratamiento(id) {
-        axios.delete(`http://127.0.0.1:8000/api/tratamientos/${id}`)
+        axios.delete(`http://127.0.0.1:8000/api/tratamiento/${id}`)
           .then(() => {
             this.fetchTratamientos();
           })

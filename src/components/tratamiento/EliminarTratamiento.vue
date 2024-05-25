@@ -14,7 +14,7 @@
     props: ['id'],
     methods: {
       eliminarTratamiento() {
-        axios.delete(`http://127.0.0.1:8000/api/tratamientos/${this.id}`)
+        axios.delete(`http://127.0.0.1:8000/api/tratamiento/${this.id}`)
           .then(() => {
             this.$emit('eliminado');
           })

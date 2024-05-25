@@ -3,6 +3,10 @@
       <h1>Editar Tratamiento</h1>
       <form @submit.prevent="actualizarTratamiento">
         <div class="form-group">
+          <label for="id" class="form-label">id:</label>
+          <input type="number" v-model="tratamiento.id" class="form-control" id="id" required>
+        </div>
+        <div class="form-group">
           <label for="fecha_facturacion" class="form-label">Fecha de Facturación:</label>
           <input type="date" v-model="tratamiento.fecha_facturacion" class="form-control" id="fecha_facturacion" required>
         </div>
@@ -31,6 +35,7 @@
     name: 'EditarTratamiento',
     data() {
       return {
+        id:0,
         tratamiento: {
           fecha_facturacion: '',
           total: null,
@@ -44,7 +49,7 @@
     methods: {
       obtenerDatosTratamiento() {
         const tratamientoId = this.$route.params.id;
-        axios.get(`http://127.0.0.1:8000/api/tratamientos/${tratamientoId}`)
+        axios.get(`http://127.0.0.1:8000/api/tratamiento/${tratamientoId}`)
           .then(response => {
             this.tratamiento = response.data.tratamiento;
           })
@@ -54,9 +59,9 @@
       },
       actualizarTratamiento() {
         const tratamientoId = this.$route.params.id;
-        axios.put(`http://127.0.0.1:8000/api/tratamientos/${tratamientoId}`, this.tratamiento)
+        axios.put(`http://127.0.0.1:8000/api/tratamiento/${tratamientoId}`, this.tratamiento)
           .then(() => {
-            this.$router.push({ name: 'Tratamientos' });
+            this.$router.push({ name: 'Tratamiento' });
             Swal.fire({
               position: 'top-end',
               icon: 'success',
