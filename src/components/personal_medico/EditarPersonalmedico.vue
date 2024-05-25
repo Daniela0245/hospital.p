@@ -53,7 +53,7 @@
         axios
           .get(`http://127.0.0.1:8000/api/personalmedico/${medicoId}`)
           .then(response => {
-            this.medico = response.data.personal_medico;
+            this.medico = response.data.personalmedico;
           })
           .catch(error => {
             if (error.response.status === 404) {
